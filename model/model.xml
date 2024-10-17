@@ -3,13 +3,13 @@
     <meta id="studioUploadedBy">sasboot</meta>
     <meta id="studioUploaded">1729166949841</meta>
     <meta id="studioModifiedBy">sasboot</meta>
-    <meta id="studioModified">1729167015085</meta>
+    <meta id="studioModified">1729167254825</meta>
     <meta id="layout">{"cq1":{"ModelReader":{"x":50,"y":50},"Score":{"x":50,"y":175},"Source":{"x":290,"y":50}}}</meta>
   </metadata>
   <contqueries>
     <contquery name="cq1" trace="Score">
       <windows>
-        <window-source name="Source" autogen-key="true" insert-only="true">
+        <window-source autogen-key="true" insert-only="true" name="Source">
           <schema>
             <fields>
               <field name="id" type="int64" key="true"/>
@@ -42,14 +42,15 @@
             </fields>
           </schema>
           <connectors>
-            <connector name="Score_connector" class="fs">
+            <connector class="fs" name="score_with_headers_Connector">
               <properties>
                 <property name="type"><![CDATA[pub]]></property>
-                <property name="fstype"><![CDATA[csv]]></property>
-                <property name="fsname"><![CDATA[@ESP_PROJECT_HOME@/test_files/score_with_headers.csv]]></property>
+                <property name="header"><![CDATA[1]]></property>
                 <property name="noautogenfield"><![CDATA[true]]></property>
                 <property name="addcsvopcode"><![CDATA[true]]></property>
                 <property name="addcsvflags"><![CDATA[normal]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="fsname"><![CDATA[@ESP_PROJECT_HOME@/test_files/score_with_headers.csv]]></property>
               </properties>
             </connector>
           </connectors>
@@ -101,7 +102,7 @@
             <offline model-type="astore"/>
           </models>
           <connectors>
-            <connector name="Result_connector" class="fs">
+            <connector class="fs" name="Result_connector">
               <properties>
                 <property name="type"><![CDATA[sub]]></property>
                 <property name="fstype"><![CDATA[csv]]></property>
